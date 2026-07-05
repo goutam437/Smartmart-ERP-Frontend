@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartMart ERP | Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-body">
+
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+    <div class="bg-shape shape-4"></div>
+
+    <div class="center-wrap">
+
+        <!-- Top brand row -->
+        <div class="brand-row">
+            <div class="brand-icon">🛒</div>
+            <div>
+                <div class="brand-title">SmartMart ERP</div>
+                <div class="brand-sub">Manage your store, the smart way</div>
+            </div>
+        </div>
+
+        <!-- Auth Card -->
+        <div class="auth-card">
+
+            <div class="auth-tabs">
+                <button class="tab-btn active" id="loginTab" onclick="switchTab('login')">Login</button>
+                <button class="tab-btn" id="signupTab" onclick="switchTab('signup')">Sign Up</button>
+            </div>
+
+            <div id="alertBox" class="alert-box" style="display:none;"></div>
+
+            <!-- LOGIN FORM -->
+            <form id="login-form" class="auth-form active" onsubmit="handleLogin(event)">
+                <div class="form-head">
+                    <h2>Welcome back ✨</h2>
+                    <p>Sign in to continue to your store</p>
+                </div>
+
+                <div class="input-wrap">
+                    <span class="input-icon">📧</span>
+                    <input type="email" id="loginEmail" placeholder="Email address" required>
+                </div>
+
+                <div class="input-wrap">
+                    <span class="input-icon">🔒</span>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <span class="eye-btn" onclick="togglePass('loginPassword', this)">👁️</span>
+                </div>
+
+                <button type="submit" class="auth-btn login-btn" id="loginBtn">
+                    Sign in <span class="btn-arrow">→</span>
+                </button>
+            </form>
+
+            <!-- SIGNUP FORM -->
+            <form id="signup-form" class="auth-form" onsubmit="handleSignup(event)">
+                <div class="form-head">
+                    <h2>Create your store 🚀</h2>
+                    <p>Get started in under a minute</p>
+                </div>
+
+                <div class="input-wrap">
+                    <span class="input-icon">👤</span>
+                    <input type="text" id="signupName" placeholder="Full name" required>
+                </div>
+
+                <div class="input-wrap">
+                    <span class="input-icon">🏪</span>
+                    <input type="text" id="signupStore" placeholder="Store name" required>
+                </div>
+
+                <div class="input-wrap">
+                    <span class="input-icon">📧</span>
+                    <input type="email" id="signupEmail" placeholder="Email address" required>
+                </div>
+
+                <div class="input-wrap">
+                    <span class="input-icon">🔒</span>
+                    <input type="password" id="signupPassword" placeholder="Create password" required>
+                    <span class="eye-btn" onclick="togglePass('signupPassword', this)">👁️</span>
+                </div>
+
+                <button type="submit" class="auth-btn signup-btn" id="signupBtn">
+                    Create account <span class="btn-arrow">→</span>
+                </button>
+            </form>
+
+        </div>
+
+        <div class="feature-pills">
+            <span class="pill">⚡ Billing</span>
+            <span class="pill">📦 Inventory</span>
+            <span class="pill">🧾 GST Invoice</span>
+            <span class="pill">👥 Customers</span>
+        </div>
+
+    </div>
+
+    <script src="js/login.js"></script>
+
+    <script>
+        // Fail-proof inline tab switching — auth.js fail ho jaaye tab bhi yeh chalega
+        function switchTab(tab) {
+            document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+
+            const targetForm = document.getElementById(tab + '-form');
+            const targetTab  = document.getElementById(tab + 'Tab');
+
+            if (targetForm) targetForm.classList.add('active');
+            if (targetTab)  targetTab.classList.add('active');
+
+            const alertBox = document.getElementById('alertBox');
+            if (alertBox) alertBox.style.display = 'none';
+        }
+
+        document.getElementById('loginTab').addEventListener('click', function() {
+            switchTab('login');
+        });
+
+        document.getElementById('signupTab').addEventListener('click', function() {
+            switchTab('signup');
+        });
+    </script>
+
+</body>
+</html>
