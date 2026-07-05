@@ -4,7 +4,7 @@
 //  Fixed version — login/signup working
 // =============================================
  
-const API_BASE = 'https://smartmart-erp-backend-production.up.railway.app/api';
+const API_BASE = 'https://smartmart-erp-backend-production-c56c.up.railway.app';
  
 // ── 1. TAB SWITCH ──
 function switchTab(tab) {
