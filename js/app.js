@@ -4,6 +4,7 @@
 // =============================================
  
 const API_BASE = 'https://smartmart-erp-backend-production-c56c.up.railway.app';
+const API = API_BASE + '/api';
 let cart = [];
 let allProducts = [];
  
