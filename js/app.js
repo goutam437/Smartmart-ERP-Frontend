@@ -3,7 +3,8 @@
 //  SmartMart ERP — js/app.js
 // =============================================
  
-const API_BASE = "http://localhost:8080/api/";
+const API_BASE = 'https://smartmart-erp-backend-production-c56c.up.railway.app/api/';
+const API = API_BASE + '/api';
 let cart = [];
 let allProducts = [];
  
