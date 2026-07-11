@@ -1,5 +1,3 @@
-import { Routes } from "./routes";
-
 const API_BASE = 'https://smartmart-erp-backend-production-c56c.up.railway.app';
 const API = API_BASE + '/api';
 // Tab switching
@@ -80,7 +78,7 @@ async function handleLogin(e) {
     try {
         showDebug('Connecting to: ' + API_BASE + '/api/auth/login');
 
-        const res  = await fetch(Routes.Login, {
+        const res  = await fetch(API_BASE + '/api/auth/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
