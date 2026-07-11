@@ -1,4 +1,4 @@
-const API_BASE = 'https://smartmart-erp-backend-production-c56c.up.railway.app/api';
+const API_BASE = "http://localhost:8080/api/";
 
 // Tab switching
 function switchTab(tab) {
