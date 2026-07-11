@@ -138,9 +138,9 @@ async function handleSignup(e) {
     setLoading('signupBtn', true);
 
     try {
-        showDebug('Connecting to: ' + API_BASE + '/auth/register');
+        showDebug('Connecting to: ' + API_BASE + '/api/auth/register');
 
-        const res  = await fetch(API_BASE + '/auth/register', {
+        const res  = await fetch(API_BASE + '/api/auth/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, storeName: store, email, password })
