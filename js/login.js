@@ -1,5 +1,5 @@
-const API_BASE = 'https://smartmart-erp-backend-production-c56c.up.railway.app';
-const API = API_BASE + '/api';
+const API_BASE = 'https://smartmart-erp-backend-production-c56c.up.railway.app/api';
+
 // Tab switching
 function switchTab(tab) {
     document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
@@ -76,9 +76,9 @@ async function handleLogin(e) {
     setLoading('loginBtn', true);
 
     try {
-        showDebug('Connecting to: ' + API_BASE + '/api/auth/login');
+        showDebug('Connecting to: ' + API_BASE + '/auth/login');
 
-        const res  = await fetch(API_BASE + '/api/auth/login', {
+        const res  = await fetch(API_BASE + '/auth/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
@@ -138,9 +138,9 @@ async function handleSignup(e) {
     setLoading('signupBtn', true);
 
     try {
-        showDebug('Connecting to: ' + API_BASE + '/api/auth/register');
+        showDebug('Connecting to: ' + API_BASE + '/auth/register');
 
-        const res  = await fetch(API_BASE + '/api/auth/register', {
+        const res  = await fetch(API_BASE + '/auth/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, storeName: store, email, password })
